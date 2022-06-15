@@ -67,7 +67,7 @@ class CartProductCard extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  "\$${controller.productSubTotal[index].toStringAsFixed(2)}",
+                  "${controller.productSubTotal[index].toStringAsFixed(2)} \TL",
                   style: TextStyle(
                     overflow: TextOverflow.ellipsis,
                     color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -86,15 +86,17 @@ class CartProductCard extends StatelessWidget {
                   IconButton(
                     onPressed: () {
                       controller.removeProductsFarmCart(productModels);
+
                     },
                     icon: Icon(
                       Icons.remove_circle,
                       color: Get.isDarkMode ? Colors.white : Colors.black,
                     ),
                   ),
+
                   Text(
                     "$quantity",
-                    style: TextStyle(
+                    style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       color: Colors.black,
                       fontSize: 16,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app/utils/theme.dart';
+import 'package:shop_app/view/widgets/setting/contact.dart';
 import 'package:shop_app/view/widgets/setting/dark_mode_widget.dart';
 import 'package:shop_app/view/widgets/setting/language_widget.dart';
 import 'package:shop_app/view/widgets/setting/logout_widget.dart';
@@ -47,6 +48,11 @@ class SettingsScreen extends StatelessWidget {
             height: 20,
           ),
           LogOutWidget(),
+          const SizedBox(
+            height: 20,
+          ),
+
+
         ],
       ),
     );

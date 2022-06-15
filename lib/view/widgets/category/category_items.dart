@@ -76,8 +76,10 @@ class CategoryItems extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5),
       child: InkWell(
+
         onTap: onTap,
         child: Container(
+
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             color: Colors.white,
@@ -91,8 +93,10 @@ class CategoryItems extends StatelessWidget {
           ),
           child: Column(
             children: [
+
               Obx(
                     () => Row(
+
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
@@ -139,7 +143,7 @@ class CategoryItems extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "\$ $price",
+                      " $price \TL",
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,

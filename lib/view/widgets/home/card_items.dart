@@ -146,7 +146,7 @@ class CardItems extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "\TL $price",
+                      " $price \TL",
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,

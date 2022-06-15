@@ -26,12 +26,12 @@ class AddCart extends StatelessWidget {
               TextUtils(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                text: "Price",
+                text: "Fiyat",
                 color: Colors.grey,
                 underLine: TextDecoration.none,
               ),
               Text(
-                "\$$price",
+                "\TL$price",
                 style: TextStyle(
                   color: Get.isDarkMode ? Colors.white : Colors.black,
                   fontSize: 20,
@@ -62,7 +62,7 @@ class AddCart extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Text(
-                      "Add to Cart",
+                      "Sepete ekle",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,

@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app/logic/controllers/auth_controller.dart';
@@ -5,6 +7,7 @@ import 'package:shop_app/routes/routes.dart';
 import 'package:shop_app/utils/my_string.dart';
 import 'package:shop_app/utils/theme.dart';
 import 'package:shop_app/view/screens/auth/forgot_password_screen.dart';
+import 'package:shop_app/view/screens/home_screen.dart';
 import 'package:shop_app/view/widgets/auth/auth_button.dart';
 import 'package:shop_app/view/widgets/auth/auth_text_from_field.dart';
 import 'package:shop_app/view/widgets/auth/container_under.dart';
@@ -17,8 +20,9 @@ class LoginScreen extends StatelessWidget {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
   final controller = Get.find<AuthController>();
+
+  final FirebaseAuth firebaseAuth= FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height / 1.3,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 25, right: 25, top: 40),
+                  padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
                   child: Form(
                     key: fromKey,
                     child: Column(
@@ -45,8 +49,8 @@ class LoginScreen extends StatelessWidget {
                           children: [
                             TextUtils(
                               fontSize: 28,
-                              fontWeight: FontWeight.w500,
-                              text: "LOG",
+                              fontWeight: FontWeight.bold,
+                              text: "Giriş",
                               color: Get.isDarkMode ? pinkClr : mainColor,
                               underLine: TextDecoration.none,
                             ),
@@ -55,26 +59,47 @@ class LoginScreen extends StatelessWidget {
                             ),
                             TextUtils(
                               fontSize: 28,
-                              fontWeight: FontWeight.w500,
-                              text: "IN",
+                              fontWeight: FontWeight.bold,
+                              text: "Yap",
                               color:
                               Get.isDarkMode ? Colors.white : Colors.black,
                               underLine: TextDecoration.none,
                             ),
+                            const SizedBox(
+                              width: 120,
+                            ),
+                            RaisedButton(
+                              color: Colors.white,
+                              elevation: 0,
+                              onPressed: () async {
+                                UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
+                                Get.toNamed(Routes.mainScreen);
+                              },
+                              child: TextUtils(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                text: "Geç",
+                                color:
+                                Get.isDarkMode ? Colors.white : Colors.green.shade500,
+                                underLine: TextDecoration.none,
+                              ),
+                            ),
                           ],
                         ),
                         const SizedBox(
-                          height: 50,
+                          height: 30,
                         ),
                         const SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
+
+
                         AuthTextFromField(
                           controller: emailController,
                           obscureText: false,
                           validator: (value) {
                             if (!RegExp(validationEmail).hasMatch(value)) {
-                              return 'Invalid email';
+                              return 'Lütfen e-postanızı girin';
                             } else {
                               return null;
                             }
@@ -87,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                           )
                               : Image.asset('assets/images/email.png'),
                           suffixIcon: const Text(""),
-                          hintText: 'Email',
+                          hintText: 'E-Posta',
                         ),
                         const SizedBox(
                           height: 20,
@@ -100,7 +125,7 @@ class LoginScreen extends StatelessWidget {
                               controller.isVisibilty ? false : true,
                               validator: (value) {
                                 if (value.toString().length < 6) {
-                                  return 'Password should be longer or equal to 6 characters';
+                                  return 'Şifre yanlış yada  daha uzun  6 karaktere eşit olmalıdır';
                                 } else {
                                   return null;
                                 }
@@ -112,7 +137,7 @@ class LoginScreen extends StatelessWidget {
                                 size: 30,
                               )
                                   : Image.asset('assets/images/lock.png'),
-                              hintText: 'Password',
+                              hintText: 'Şifre',
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   controller.visibility();
@@ -137,7 +162,7 @@ class LoginScreen extends StatelessWidget {
                               Get.toNamed(Routes.forgotPasswordScreen);
                             },
                             child: TextUtils(
-                              text: 'Forgot Password?',
+                              text: 'Şifremi Unuttum ?',
                               fontSize: 14,
                               color:
                               Get.isDarkMode ? Colors.white : Colors.black,
@@ -160,11 +185,11 @@ class LoginScreen extends StatelessWidget {
                                     email: email, password: password);
                               }
                             },
-                            text: "LOG IN",
+                            text: "Giriş Yap",
                           );
                         }),
                         const SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
                         TextUtils(
                           fontSize: 18,
@@ -174,7 +199,7 @@ class LoginScreen extends StatelessWidget {
                           underLine: TextDecoration.none,
                         ),
                         const SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -208,8 +233,8 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               ContainerUnder(
-                text: "Don't have an Account? ",
-                textType: "Sign up",
+                text: " Hesabınız yok mu?  ",
+                textType: " Üye Ol",
                 onPressed: () {
                   Get.offNamed(Routes.signUpScreen);
                 },

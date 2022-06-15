@@ -9,6 +9,7 @@ import 'package:shop_app/view/screens/cart_screen.dart';
 import 'package:shop_app/view/screens/main_screen.dart';
 import 'package:shop_app/view/screens/payment_screen.dart';
 import 'package:shop_app/view/screens/welcome_screen.dart';
+import 'package:shop_app/view/widgets/home/MyDrawer.dart';
 
 class AppRoutes {
   //initialRoute
@@ -63,6 +64,16 @@ class AppRoutes {
         MainBininding(),
       ],
     ),
+    GetPage(
+      name: Routes.mydrawer,
+      page: () => MyDrawer(),
+      bindings: [
+        AuthBinding(),
+        ProductBinding(),
+        MainBininding(),
+      ],
+    ),
+
   ];
 }
 
@@ -74,4 +85,5 @@ class Routes {
   static const mainScreen = '/mainScreen';
   static const cartScreen = '/cartScreen';
   static const paymentScreen = '/paymentScreen';
+  static const mydrawer = '/MyDrawer';
 }

@@ -10,7 +10,7 @@ class SizeList extends StatefulWidget {
 }
 
 class _SizeListState extends State<SizeList> {
-  final List<String> sizeList = ['S', 'M', 'L', 'XL', 'XXL'];
+  final List<String> sizeList = ['', '', '', '', ''];
 
   var currentSeletected = 0;
 

@@ -23,12 +23,12 @@ class CartTotal extends StatelessWidget {
                 TextUtils(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  text: "Total",
+                  text: "Toplam",
                   color: Colors.grey,
                   underLine: TextDecoration.none,
                 ),
                 Text(
-                  "\$${controller.total}",
+                  "${controller.total} \TL",
                   style: TextStyle(
                     color: Get.isDarkMode ? Colors.white : Colors.black,
                     fontSize: 20,

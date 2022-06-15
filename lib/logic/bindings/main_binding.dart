@@ -1,6 +1,5 @@
 import 'package:get/instance_manager.dart';
 import 'package:shop_app/logic/controllers/main_controller.dart';
-import 'package:shop_app/logic/controllers/payment_controller.dart';
 import 'package:shop_app/logic/controllers/settings_controller.dart';
 
 class MainBininding extends Bindings {

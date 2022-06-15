@@ -48,7 +48,7 @@ class SignUpScreen extends StatelessWidget {
                             TextUtils(
                               fontSize: 28,
                               fontWeight: FontWeight.w500,
-                              text: "SIGN",
+                              text: "Üye",
                               color: Get.isDarkMode ? pinkClr : mainColor,
                               underLine: TextDecoration.none,
                             ),
@@ -58,7 +58,7 @@ class SignUpScreen extends StatelessWidget {
                             TextUtils(
                               fontSize: 28,
                               fontWeight: FontWeight.w500,
-                              text: "UP",
+                              text: " Ol",
                               color:
                               Get.isDarkMode ? Colors.white : Colors.black,
                               underLine: TextDecoration.none,
@@ -74,7 +74,7 @@ class SignUpScreen extends StatelessWidget {
                           validator: (value) {
                             if (value.toString().length <= 2 ||
                                 !RegExp(validationName).hasMatch(value)) {
-                              return 'Enter valid name';
+                              return 'Geçerli bir kullanıcı adı giriniz';
                             } else {
                               return null;
                             }
@@ -87,7 +87,7 @@ class SignUpScreen extends StatelessWidget {
                           )
                               : Image.asset('assets/images/user.png'),
                           suffixIcon: const Text(""),
-                          hintText: 'User Name',
+                          hintText: 'kullanıcı adı',
                         ),
                         const SizedBox(
                           height: 20,
@@ -97,7 +97,7 @@ class SignUpScreen extends StatelessWidget {
                           obscureText: false,
                           validator: (value) {
                             if (!RegExp(validationEmail).hasMatch(value)) {
-                              return 'Invalid email';
+                              return 'Lütfen e-postanızı girin';
                             } else {
                               return null;
                             }
@@ -110,7 +110,7 @@ class SignUpScreen extends StatelessWidget {
                           )
                               : Image.asset('assets/images/email.png'),
                           suffixIcon: const Text(""),
-                          hintText: 'Email',
+                          hintText: 'E-Posta',
                         ),
                         const SizedBox(
                           height: 20,
@@ -123,7 +123,7 @@ class SignUpScreen extends StatelessWidget {
                               controller.isVisibilty ? false : true,
                               validator: (value) {
                                 if (value.toString().length < 6) {
-                                  return 'Password should be longer or equal to 6 characters';
+                                  return 'Şifre daha uzun 6 karaktere eşit olmalıdır';
                                 } else {
                                   return null;
                                 }
@@ -135,7 +135,7 @@ class SignUpScreen extends StatelessWidget {
                                 size: 30,
                               )
                                   : Image.asset('assets/images/lock.png'),
-                              hintText: 'Password',
+                              hintText: 'Şifre',
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   controller.visibility();
@@ -168,9 +168,11 @@ class SignUpScreen extends StatelessWidget {
                                   Get.snackbar(
                                     "Check Box",
                                     "Please, Accept terms & conditions",
+
                                     snackPosition: SnackPosition.BOTTOM,
                                     backgroundColor: Colors.green,
                                     colorText: Colors.white,
+
                                   );
                                 } else if (fromKey.currentState!.validate()) {
                                   String name = nameController.text.trim();
@@ -185,7 +187,7 @@ class SignUpScreen extends StatelessWidget {
                                   controller.isCheckBox = true;
                                 }
                               },
-                              text: "SIGN UP",
+                              text: "Üye Ol ",
                             );
                           },
                         )
@@ -195,8 +197,8 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               ContainerUnder(
-                text: 'Already have an Account? ',
-                textType: "Log in",
+                text: 'Zaten hesabınız var mı? ',
+                textType: "Giriş Yap",
                 onPressed: () {
                   Get.offNamed(Routes.loginScreen);
                 },

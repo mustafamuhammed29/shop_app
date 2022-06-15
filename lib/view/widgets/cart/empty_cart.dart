@@ -24,7 +24,7 @@ class EmptyCart extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: "Your Cart is ",
+                  text: "Sepetiniz ",
                   style: TextStyle(
                     color: Get.isDarkMode ? Colors.white : Colors.black,
                     fontSize: 30,
@@ -32,7 +32,7 @@ class EmptyCart extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: "Empty",
+                  text: "Boş",
                   style: TextStyle(
                     color: Get.isDarkMode ? pinkClr : mainColor,
                     fontSize: 30,
@@ -46,7 +46,7 @@ class EmptyCart extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "Add items to get Started",
+            "Başlamak için ürün ekleyin",
             style: TextStyle(
               color: Get.isDarkMode ? Colors.white : Colors.black,
               fontSize: 15,
@@ -70,7 +70,7 @@ class EmptyCart extends StatelessWidget {
                 Get.toNamed(Routes.mainScreen);
               },
               child: const Text(
-                'Go to Home',
+                'Ana sayfaya git',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
@@ -78,6 +78,7 @@ class EmptyCart extends StatelessWidget {
               ),
             ),
           ),
+
         ],
       ),
     );

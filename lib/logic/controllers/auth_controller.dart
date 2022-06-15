@@ -8,6 +8,7 @@ import 'package:shop_app/routes/routes.dart';
 
 
 class AuthController extends GetxController {
+
   bool isVisibilty = false;
   bool isCheckBox = false;
   var displayUserName = ''.obs;

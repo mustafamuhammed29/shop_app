@@ -25,7 +25,7 @@ class FavoritesScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Text('Please, Add your favorites products.',
+                  Text('Lütfen favori ürünlerinizi ekleyin.',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Get.isDarkMode ? Colors.white : Colors.black,

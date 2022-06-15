@@ -93,6 +93,16 @@ class LanguageWidget extends StatelessWidget {
                     ),
                     value: frf,
                   ),
+                  DropdownMenuItem(
+                    child: Text(
+                      turkce,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    value: tur,
+                  ),
                 ],
                 value: controller.langLocal,
                 onChanged: (value) {

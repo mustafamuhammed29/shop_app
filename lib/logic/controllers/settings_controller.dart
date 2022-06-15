@@ -38,12 +38,19 @@ class SettingController extends GetxController {
     if (typeLang == frf) {
       langLocal = frf;
       saveLanguage(frf);
-    } else if (typeLang == ara) {
+    }
+    else if (typeLang == ara) {
       langLocal = ara;
       saveLanguage(ara);
-    } else {
+    }
+
+    else if (typeLang == ene) {
       langLocal = ene;
       saveLanguage(ene);
+    }
+    else {
+    langLocal = tur;
+    saveLanguage(tur);
     }
     update();
   }

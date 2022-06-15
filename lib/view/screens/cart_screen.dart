@@ -17,17 +17,18 @@ class CartScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: context.theme.backgroundColor,
         appBar: AppBar(
-          title: const Text("Cart Items"),
+          title: const Text("Sepetim"),
           elevation: 0,
           backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
           centerTitle: true,
           actions: [
-            IconButton(
+         /*   IconButton(
               onPressed: () {
                 controller.clearAllProducts();
               },
               icon: const Icon(Icons.backspace),
             ),
+            */
           ],
         ),
         body: Obx(

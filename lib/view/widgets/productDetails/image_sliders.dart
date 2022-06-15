@@ -26,14 +26,7 @@ class _ImageSlidersState extends State<ImageSliders> {
   final cartController = Get.find<CartController>();
 
   final List<Color> colorSelected = [
-    kCOlor1,
-    kCOlor2,
-    kCOlor3,
-    kCOlor4,
-    kCOlor5,
-    kCOlor2,
-    kCOlor3,
-    kCOlor4,
+
   ];
   int currentPage = 0;
   int currentColor = 0;

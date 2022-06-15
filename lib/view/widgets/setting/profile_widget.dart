@@ -21,7 +21,7 @@ class ProfileWidget extends StatelessWidget {
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.blueGrey,
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: NetworkImage(
@@ -38,7 +38,7 @@ class ProfileWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextUtils(
-                    fontSize: 22,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     text: controller
                         .capitalize(authController.displayUserName.value),
@@ -46,7 +46,7 @@ class ProfileWidget extends StatelessWidget {
                     underLine: TextDecoration.none,
                   ),
                   TextUtils(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                     text: authController.displayUserEmail.value,
                     color: Get.isDarkMode ? Colors.white : Colors.black,

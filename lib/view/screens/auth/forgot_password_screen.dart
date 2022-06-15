@@ -24,7 +24,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           centerTitle: true,
           elevation: 0,
           title: Text(
-            'Forgot Password',
+            'Şifremi Unuttum ',
             style: TextStyle(
               color: Get.isDarkMode ? pinkClr : mainColor,
             ),
@@ -62,7 +62,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    'If you want to recover your account, then please provide your email ID below..',
+                    'Hesabınızı kurtarmak istiyorsanız, lütfen aşağıya e-posta kimliğinizi girin..',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -83,7 +83,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     obscureText: false,
                     validator: (value) {
                       if (!RegExp(validationEmail).hasMatch(value)) {
-                        return 'Invalid email';
+                        return 'Lütfen e-postanızı girin';
                       } else {
                         return null;
                       }
@@ -96,7 +96,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     )
                         : Image.asset('assets/images/email.png'),
                     suffixIcon: const Text(""),
-                    hintText: 'Email',
+                    hintText: 'E-Posta',
                   ),
                   const SizedBox(
                     height: 50,
@@ -109,7 +109,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                           controller.resetPassword(email);
                         }
                       },
-                      text: "SEND",
+                      text: "Şifremi Yenile",
                     );
                   }),
                 ],

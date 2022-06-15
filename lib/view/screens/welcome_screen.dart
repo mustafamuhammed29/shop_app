@@ -17,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         child: Image.asset(
-          'assets/images/background.png',
+          'assets/images/background.jpg',
           fit: BoxFit.cover,
         ),
       ),
@@ -40,9 +40,9 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 child: const Center(
                   child: TextUtils(
-                    fontSize: 35,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    text: 'Welcome',
+                    text: 'Hoş Geldiniz',
                     color: Colors.white,
                     underLine: TextDecoration.none,
                   ),
@@ -72,7 +72,7 @@ class WelcomeScreen extends StatelessWidget {
                       width: 7,
                     ),
                     TextUtils(
-                      fontSize: 35,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
                       text: "Shop",
                       color: Colors.white,
@@ -82,7 +82,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 250,
+                height: 300,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -100,7 +100,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: const TextUtils(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
-                  text: 'Get Start',
+                  text: ' Başla ',
                   color: Colors.white,
                   underLine: TextDecoration.none,
                 ),
@@ -114,7 +114,7 @@ class WelcomeScreen extends StatelessWidget {
                   const TextUtils(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
-                    text: "Don't have an Account?",
+                    text: "Hesabınız yok mu?",
                     color: Colors.white,
                     underLine: TextDecoration.none,
                   ),
@@ -124,7 +124,7 @@ class WelcomeScreen extends StatelessWidget {
 
                     },
                     child: const TextUtils(
-                      text: 'Sign Up',
+                      text: ' Üye Ol',
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.normal,

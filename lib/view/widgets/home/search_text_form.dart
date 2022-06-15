@@ -35,7 +35,7 @@ class SearchFormText extends StatelessWidget {
             ),
           )
               : null,
-          hintText: "Search with name & price",
+          hintText: "İsim ve fiyat ile ara",
           hintStyle: const TextStyle(
             color: Colors.black45,
             fontSize: 16,

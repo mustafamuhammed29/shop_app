@@ -85,6 +85,17 @@ class MainScreen extends StatelessWidget {
                 ),
                 BottomNavigationBarItem(
                   activeIcon: Icon(
+                    Icons.contact_mail,
+                    color: Get.isDarkMode ? pinkClr : mainColor,
+                  ),
+                  icon: Icon(
+                    Icons.contact_mail,
+                    color: Get.isDarkMode ? Colors.white : Colors.black,
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  activeIcon: Icon(
                     Icons.settings,
                     color: Get.isDarkMode ? pinkClr : mainColor,
                   ),
@@ -94,6 +105,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   label: '',
                 ),
+
               ],
               onTap: (index) {
                 controller.currentIndex.value = index;

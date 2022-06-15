@@ -41,18 +41,23 @@ class CheckWidget extends StatelessWidget {
           Row(
             children: [
               TextUtils(
-                fontSize: 16,
+                fontSize: 13,
                 fontWeight: FontWeight.normal,
-                text: "I accept ",
+                text: "okudum ve anladım ",
                 color: Get.isDarkMode ? Colors.white : Colors.black,
                 underLine: TextDecoration.none,
               ),
-              TextUtils(
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
-                text: "terms & conditions",
-                color: Get.isDarkMode ? Colors.white : Colors.black,
-                underLine: TextDecoration.underline,
+              InkWell(
+                onTap: (){
+
+                },
+                child: TextUtils(
+                  fontSize: 13,
+                  fontWeight: FontWeight.normal,
+                  text: "aydınlatma metnini",
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                  underLine: TextDecoration.underline,
+                ),
               ),
             ],
           ),
